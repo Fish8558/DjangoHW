@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.db import models
 
 
@@ -21,6 +23,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='Цена')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
+    manufactured_at = models.DateTimeField(default=date(year=2024, month=4, day=1), verbose_name='Дата производства')
 
     def __str__(self):
         return f"{self.name} {self.price} {self.category}"
