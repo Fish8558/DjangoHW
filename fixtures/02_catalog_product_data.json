@@ -1,0 +1,119 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Samsung Galaxy S24 Ultra 5G 12/512Gb",
+      "description": "Экран: AMOLED Dynamic AMOLED 2X QHD+, 6.8\" (3120x1440),\r\nПроцессор: Qualcomm Snapdragon 8 Gen 3;\r\nПамять: оперативная 12 ГБ, встроенная 512 ГБ,\r\nПоддержка сетей: 2G/3G/4G (LTE)/5G;\r\nСканер отпечатка пальцев: экран;\r\nРазмеры (ШхВхТ): 79 х 162.3 х 8.6 мм;",
+      "image": "product/samsung-galaxy-s24-ultra.jpg",
+      "category": 1,
+      "price": 159990,
+      "created_at": "2024-04-01T22:52:29.333Z",
+      "updated_at": "2024-04-01T23:03:33.297Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Apple iPhone 15 Pro Max 256Gb",
+      "description": "Экран: OLED Super Retina XDR, 6.7\" (2796x1290),\r\nПроцессор: Apple A17 Pro;\r\nПамять: встроенная 256 ГБ,\r\nПоддержка сетей: 2G/3G/4G (LTE)/5G;\r\nРазмеры (ШхВхТ): 76.7 х 159.9 х 8.25 мм;",
+      "image": "product/apple-iphone-15-pro-max-256gb.jpg",
+      "category": 1,
+      "price": 169490,
+      "created_at": "2024-04-01T22:59:35.307Z",
+      "updated_at": "2024-04-01T22:59:35.307Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Huawei P60 8/256Gb",
+      "description": "Экран: OLED, 6.67\" (2700x1220),\r\nПроцессор: Qualcomm Snapdragon 8 Plus Gen 1;\r\nПамять: оперативная 8 ГБ, встроенная 256 ГБ,\r\nПоддержка сетей: 2G/3G/4G (LTE);\r\nСканер отпечатка пальцев: экран;\r\nРазмеры (ШхВхТ): 74.5 х 161 х 8.3 мм;",
+      "image": "product/huawei-p60-8-256gb.jpg",
+      "category": 1,
+      "price": 59990,
+      "created_at": "2024-04-01T23:02:38.003Z",
+      "updated_at": "2024-04-01T23:02:38.003Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Xiaomi Redmi Note 13 Pro+ 5G 8/256Gb",
+      "description": "Экран: AMOLED FHD+, 6.67\" (2712x1220),\r\nПроцессор: MediaTek Dimensity 7200 Ultra;\r\nПамять: оперативная 8 ГБ, встроенная 256 ГБ,\r\nПоддержка сетей: 2G/3G/4G (LTE)/5G;\r\nСканер отпечатка пальцев: экран;\r\nРазмеры (ШхВхТ): 74.2 х 161.4 х 8.9 мм;",
+      "image": "product/xiaomi-redmi-note-13-pro.jpg",
+      "category": 1,
+      "price": 49790,
+      "created_at": "2024-04-01T23:06:32.257Z",
+      "updated_at": "2024-04-01T23:06:32.257Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "MSI Titan 18 HX A14VIG-211RU 9S7-182221-211",
+      "description": "Экран: 18 \"; 3840х2400; IPS;\r\nПроцессор: Intel Core i9 14900HX 1.6 ГГц (5.6 ГГц, в режиме Turbo)\r\nГрафический процессор: NVIDIA GeForce RTX 4090 для ноутбуков - 16 ГБ;\r\nОперативная память: 64 ГБ, DDR5;\r\nДиск: SSD 1024 ГБ и 1024 ГБ и 1024 ГБ;\r\nОперационная система: Windows 11 Home;\r\nКлавиатура: с русскими буквами",
+      "image": "product/msi-titan-18.jpg",
+      "category": 2,
+      "price": 659990,
+      "created_at": "2024-04-01T23:08:59.565Z",
+      "updated_at": "2024-04-01T23:12:02.904Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "ASUS Zenbook Pro 16X",
+      "description": "Экран: 16 \"; 3840х2400; OLED;\r\nПроцессор: Intel Core i9 13900H 2.6 ГГц (5.4 ГГц, в режиме Turbo)\r\nГрафический процессор: NVIDIA GeForce RTX 4070 для ноутбуков - 8 ГБ;\r\nОперативная память: 32 ГБ, LPDDR5;\r\nДиск: SSD 1024 ГБ;\r\nОперационная система: Windows 11 Professional;\r\nКлавиатура: с русскими буквами",
+      "image": "product/asus-zenbook-pro.jpg",
+      "category": 2,
+      "price": 348990,
+      "created_at": "2024-04-01T23:10:21.467Z",
+      "updated_at": "2024-04-01T23:11:57.147Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Apple MacBook Pro A2780",
+      "description": "Экран: 16.2 \"; 3456х2234; IPS;\r\nПроцессор: Apple M2 Pro 12 core 3.49 ГГц (2.6 ГГц, в режиме Turbo)\r\nОперативная память: 16 ГБ;\r\nДиск: SSD 512 ГБ;\r\nОперационная система: Mac OS;\r\nКлавиатура: с русскими буквами\r\nКомплектация: вилка: Тип G (Английская с предохранителем);",
+      "image": "product/apple-macbook-pro.jpg",
+      "category": 2,
+      "price": 339990,
+      "created_at": "2024-04-01T23:11:49.936Z",
+      "updated_at": "2024-04-01T23:11:49.936Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Samsung QE98Q80CAUXCE, QLED, 4K Ultra HD",
+      "description": "Экран: 3840 x 2160, QLED, 4K Ultra HD, 100 Гц\r\nТюнеры: DVB-T2, DVB-C, DVB-S2,\r\nОсобенности: SMART TV; HDR;\r\nОперационная система: Tizen 7.0;\r\nМощность акустики: 2 x 10 Вт;\r\nЦвет: серебристый;",
+      "image": "product/samsung-qe98q80cauxce.jpg",
+      "category": 3,
+      "price": 599990,
+      "created_at": "2024-04-01T23:14:12.219Z",
+      "updated_at": "2024-04-01T23:14:12.219Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "LG OLED83C3RLA.ARUB, OLED, 4K Ultra HD",
+      "description": "Экран: 3840 x 2160, OLED, 4K Ultra HD, 120 Гц\r\nТюнеры: DVB-T, DVB-T2, DVB-C, DVB-S2,\r\nОсобенности: SMART TV; HDR;\r\nОперационная система: webOS 23;\r\nМощность акустики: 2 x 10 Вт;\r\nЦвет: темно-серый;",
+      "image": "product/televizor-lg-oled83c3rla.jpg",
+      "category": 3,
+      "price": 499990,
+      "created_at": "2024-04-01T23:15:36.649Z",
+      "updated_at": "2024-04-01T23:15:36.649Z"
+    }
+  }
+]
