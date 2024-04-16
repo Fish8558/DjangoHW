@@ -4,11 +4,10 @@ from catalog.models import Product, Contact
 
 
 def home(request):
-    products = Product.objects.all()
-    list_product = products[len(products) - 5:]
-    for num, product in enumerate(list_product, 1):
-        print(f"{num}: {product}")
-    return render(request, 'catalog/home.html')
+    context = {
+        "object_list": Product.objects.all()
+    }
+    return render(request, 'catalog/home.html', context)
 
 
 def contacts(request):
