@@ -19,3 +19,11 @@ def contacts(request):
         message = request.POST.get('message')
         print(f"Имя: {name} / Телефон: {phone} / Сообщение: {message}")
     return render(request, 'catalog/contacts.html', context={"contact": contact})
+
+
+def product(request, pk):
+    context = {
+        "object": Product.objects.get(pk=pk)
+    }
+    return render(request, 'catalog/product.html', context)
+
