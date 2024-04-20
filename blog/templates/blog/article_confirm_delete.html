@@ -1,0 +1,19 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-3 card shadow-lg">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <p>Вы действительно хотет удалить статью:<br><i>{{ object.title }}</i></p>
+                <img src="{{ object.image | media_url }}" style="width:100%">
+                <div class="row">
+                    <button type="submit" class="btn btn-danger mt-2">Подтвердить</button>
+                    <a href="{% url 'blog:list' %}" class="btn btn-warning mt-1">Отменить</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
