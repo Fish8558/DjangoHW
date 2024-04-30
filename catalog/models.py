@@ -60,3 +60,17 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = 'сообщение'
         verbose_name_plural = 'сообщения'
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='version', verbose_name="Продукт")
+    version_number = models.CharField(max_length=15, verbose_name="Номер версии")
+    version_name = models.CharField(max_length=100, verbose_name="Название версии")
+    is_active = models.BooleanField(default=True, verbose_name="Признак версии")
+
+    def __str__(self):
+        return f"{self.version_name} ({self.version_number})"
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'

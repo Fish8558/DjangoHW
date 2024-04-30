@@ -18,6 +18,11 @@ class ProductDetailView(DetailView):
         "title": "Товар"
     }
 
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['version'] = self.object.version.filter(is_active=True).first()
+        return context_data
+
 
 class ProductCreateView(CreateView):
     model = Product

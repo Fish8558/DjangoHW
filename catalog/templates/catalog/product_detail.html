@@ -1,23 +1,27 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
 {% load my_tags %}
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="card text-center">
-                <div class="card-header">
-                    {{ object.name }}
-                </div>
-                <div class="card-body">
-                    <img src="{{object.image | media_url }}" style="width:50%"><br>
-                    <b>Цена:</b> {{ object.price }} руб.<br>
-                    <b>Категория:</b> {{ object.category }}<br>
-                    <b>Описание:</b> {{ object.description }}
-                    <div class="col-12 mt-2">
-                        <a class="btn btn-warning" href="{% url 'catalog:product_update' object.pk %}">Редактировать</a>
-                        <a class="btn btn-danger" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
-                    </div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                {{ object.name }}
+            </div>
+            <div class="card-body">
+                <p style="text-align:center"><img src="{{object.image | media_url }}" style="width:50%;"></p><br>
+                <b>Цена:</b> {{ object.price }} руб.<br>
+                <b>Категория:</b> {{ object.category }}<br>
+                <b>Описание:</b> {{ object.description }}<br>
+                {% if version %}
+                    <b>Номер версии:</b> {{ version.version_number }}<br>
+                    <b>Название версии:</b> {{ version.version_name }}
+                {% endif %}
+                <div class="col-12 mt-2">
+                    <a class="btn btn-warning" href="{% url 'catalog:product_update' object.pk %}">Редактировать</a>
+                    <a class="btn btn-danger" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
