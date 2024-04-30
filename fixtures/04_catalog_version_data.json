@@ -1,0 +1,22 @@
+[
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 12,
+      "version_number": "1",
+      "version_name": "бюджетная",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 12,
+      "version_number": "2",
+      "version_name": "премиум",
+      "is_active": false
+    }
+  }
+]

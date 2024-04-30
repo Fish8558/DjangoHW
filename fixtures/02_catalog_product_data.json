@@ -8,8 +8,8 @@
       "image": "product/samsung-galaxy-s24-ultra.jpg",
       "category": 1,
       "price": 159990,
-      "created_at": "2024-04-01T22:52:29.333Z",
-      "updated_at": "2024-04-01T23:03:33.297Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -21,8 +21,8 @@
       "image": "product/apple-iphone-15-pro-max-256gb.jpg",
       "category": 1,
       "price": 169490,
-      "created_at": "2024-04-01T22:59:35.307Z",
-      "updated_at": "2024-04-01T22:59:35.307Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -34,8 +34,8 @@
       "image": "product/huawei-p60-8-256gb.jpg",
       "category": 1,
       "price": 59990,
-      "created_at": "2024-04-01T23:02:38.003Z",
-      "updated_at": "2024-04-01T23:02:38.003Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -47,8 +47,8 @@
       "image": "product/xiaomi-redmi-note-13-pro.jpg",
       "category": 1,
       "price": 49790,
-      "created_at": "2024-04-01T23:06:32.257Z",
-      "updated_at": "2024-04-01T23:06:32.257Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -60,8 +60,8 @@
       "image": "product/msi-titan-18.jpg",
       "category": 2,
       "price": 659990,
-      "created_at": "2024-04-01T23:08:59.565Z",
-      "updated_at": "2024-04-01T23:12:02.904Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -73,8 +73,8 @@
       "image": "product/asus-zenbook-pro.jpg",
       "category": 2,
       "price": 348990,
-      "created_at": "2024-04-01T23:10:21.467Z",
-      "updated_at": "2024-04-01T23:11:57.147Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -86,8 +86,8 @@
       "image": "product/apple-macbook-pro.jpg",
       "category": 2,
       "price": 339990,
-      "created_at": "2024-04-01T23:11:49.936Z",
-      "updated_at": "2024-04-01T23:11:49.936Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -99,8 +99,8 @@
       "image": "product/samsung-qe98q80cauxce.jpg",
       "category": 3,
       "price": 599990,
-      "created_at": "2024-04-01T23:14:12.219Z",
-      "updated_at": "2024-04-01T23:14:12.219Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
     }
   },
   {
@@ -112,8 +112,21 @@
       "image": "product/televizor-lg-oled83c3rla.jpg",
       "category": 3,
       "price": 499990,
-      "created_at": "2024-04-01T23:15:36.649Z",
-      "updated_at": "2024-04-01T23:15:36.649Z"
+      "created_at": "2024-04-01T23:29:46.285Z",
+      "updated_at": "2024-04-01T23:29:46.285Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "50\" Телевизор HAIER Smart TV S1, 4K Ultra HD, черный, СМАРТ ТВ",
+      "description": "Экран: 3840 x 2160, LED, 4K Ultra HD, 60 Гц\r\nТюнеры: DVB-T, DVB-T2, DVB-C, DVB-S2,\r\nОсобенности: SMART TV; HDR;\r\nОперационная система: Android 11;\r\nМощность акустики: 2 x 10 Вт;\r\nЦвет: черный;",
+      "image": "product/televizor-haier-smart-tv-s1-4k-ultra-hd-cherny.jpg",
+      "category": 3,
+      "price": 31990,
+      "created_at": "2024-04-30T16:15:03.317Z",
+      "updated_at": "2024-04-30T16:15:03.321Z"
     }
   }
 ]
