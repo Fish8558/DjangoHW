@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import BooleanField
 
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Feedback
 
 FORBIDDEN_WORDS = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
 
@@ -40,3 +40,9 @@ class VersionForm(StyleFormMixin, forms.ModelForm):
             if word in clean_data.lower():
                 raise forms.ValidationError('Название версии содержит запрещенное слово')
         return clean_data
+
+
+class FeedbackForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ('name', 'phone', 'message',)

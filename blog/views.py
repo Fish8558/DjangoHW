@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
-
+from blog.forms import ArticleForm
 from blog.models import Article
 
 
@@ -32,7 +32,7 @@ class ArticleDetailView(DetailView):
 
 class ArticleCreateView(CreateView):
     model = Article
-    fields = ('title', 'content', 'image', 'is_published')
+    form_class = ArticleForm
     extra_context = {
         'title': 'Добавление статьи'
     }
@@ -50,7 +50,7 @@ class ArticleCreateView(CreateView):
 
 class ArticleUpdateView(UpdateView):
     model = Article
-    fields = ('title', 'content', 'image', 'is_published')
+    form_class = ArticleForm
     extra_context = {
         'title': 'Редактирование статьи'
     }

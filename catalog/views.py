@@ -2,7 +2,7 @@ from django.forms import inlineformset_factory
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, FeedbackForm
 from catalog.models import Product, Contact, Feedback, Version
 
 
@@ -95,7 +95,7 @@ class ProductDeleteView(DeleteView):
 
 class FeedbackCreateView(CreateView):
     model = Feedback
-    fields = ('name', 'phone', 'message',)
+    form_class = FeedbackForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
