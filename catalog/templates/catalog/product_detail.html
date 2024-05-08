@@ -12,14 +12,17 @@
                 <b>Цена:</b> {{ object.price }} руб.<br>
                 <b>Категория:</b> {{ object.category }}<br>
                 <b>Описание:</b> {{ object.description }}<br>
+                <b>Добавил:</b> {{ object.owner|default:'аноним' }}<br>
                 {% if version %}
                     <b>Номер версии:</b> {{ version.version_number }}<br>
                     <b>Название версии:</b> {{ version.version_name }}
                 {% endif %}
+                {% if user.is_authenticated %}
                 <div class="col-12 mt-2">
                     <a class="btn btn-warning" href="{% url 'catalog:product_update' object.pk %}">Редактировать</a>
                     <a class="btn btn-danger" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
@@ -17,7 +18,7 @@ class ArticleListView(ListView):
         return queryset
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
     extra_context = {
         'title': 'Статьи'
@@ -30,7 +31,7 @@ class ArticleDetailView(DetailView):
         return self.object
 
 
-class ArticleCreateView(CreateView):
+class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     form_class = ArticleForm
     extra_context = {
@@ -40,6 +41,7 @@ class ArticleCreateView(CreateView):
     def form_valid(self, form):
         if form.is_valid():
             new_blog = form.save()
+            new_blog.owner = self.request.user
             new_blog.slug = slugify(new_blog.title)
             new_blog.save()
         return super().form_valid(form)
@@ -48,7 +50,7 @@ class ArticleCreateView(CreateView):
         return reverse('blog:view', args=[self.object.slug])
 
 
-class ArticleUpdateView(UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     model = Article
     form_class = ArticleForm
     extra_context = {
@@ -59,7 +61,7 @@ class ArticleUpdateView(UpdateView):
         return reverse('blog:view', args=[self.object.slug])
 
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
     extra_context = {
         'title': 'Удаление статьи'
