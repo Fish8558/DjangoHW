@@ -13,7 +13,7 @@
                     <b>Дата публикации:</b> {{ object.create_at }}<br>
                     <b>Количество просмотров:</b> {{ object.view_count }}<br>
                     <p><b>Автор:</b> {{ object.owner|default:'неизвестен' }}</p>
-                    {% if user.is_authenticated %}
+                    {% if perms.blog.delete_article and perms.blog.change_article or user == object.owner %}
                     <a href="{% url 'blog:update' object.slug %}" class="btn btn-warning">Редактировать</a>
                     <a href="{% url 'blog:delete' object.slug %}" class="btn btn-danger">Удалить</a>
                     {% endif %}

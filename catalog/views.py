@@ -1,9 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from catalog.forms import ProductForm, VersionForm, FeedbackForm
+from catalog.forms import ProductForm, VersionForm, FeedbackForm, ProductModeratorForm
 from catalog.models import Product, Contact, Feedback, Version
 
 
@@ -86,6 +87,23 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         else:
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
 
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.owner or user.is_superuser:
+            return ProductForm
+        if user.has_perms(['catalog.can_change_category',
+                           'catalog.can_change_description',
+                           'catalog.set_published_status']):
+            return ProductModeratorForm
+
+    def dispatch(self, request, *args, **kwargs):
+        user = self.request.user
+        if (user != self.get_object().owner and not user.is_superuser and
+                not user.groups.filter(name='moderator').exists()):
+            raise PermissionDenied
+
+        return super().dispatch(request, *args, **kwargs)
+
 
 class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
@@ -93,6 +111,13 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
         "title": "Удаление товара"
     }
     success_url = reverse_lazy('catalog:product_list')
+
+    def dispatch(self, request, *args, **kwargs):
+        user = self.request.user
+        if user != self.get_object().owner and not user.is_superuser:
+            raise PermissionDenied
+
+        return super().dispatch(request, *args, **kwargs)
 
 
 class FeedbackCreateView(CreateView):

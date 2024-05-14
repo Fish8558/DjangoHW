@@ -1,5 +1,3 @@
-from datetime import date
-
 from django.conf import settings
 from django.db import models
 
@@ -28,6 +26,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                               **NULLABLE, verbose_name='Пользователь')
+    is_published = models.BooleanField(default=False, verbose_name='Признак публикации')
 
     def __str__(self):
         return f"{self.name} {self.price} {self.category}"
@@ -35,6 +34,11 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
+        permissions = [
+            ('can_change_description', 'Can change description'),
+            ('can_change_category', 'Can change category'),
+            ('set_published_status', 'Can publish product')
+        ]
 
 
 class Contact(models.Model):

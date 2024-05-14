@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
@@ -18,7 +18,8 @@ class ArticleListView(ListView):
         return queryset
 
 
-class ArticleDetailView(LoginRequiredMixin, DetailView):
+class ArticleDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
+    permission_required = 'blog.view_article'
     model = Article
     extra_context = {
         'title': 'Статьи'
@@ -31,7 +32,8 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
         return self.object
 
 
-class ArticleCreateView(LoginRequiredMixin, CreateView):
+class ArticleCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    permission_required = 'blog.add_article'
     model = Article
     form_class = ArticleForm
     extra_context = {
@@ -50,7 +52,8 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
         return reverse('blog:view', args=[self.object.slug])
 
 
-class ArticleUpdateView(LoginRequiredMixin, UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+    permission_required = 'blog.change_article'
     model = Article
     form_class = ArticleForm
     extra_context = {
@@ -61,7 +64,8 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         return reverse('blog:view', args=[self.object.slug])
 
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    permission_required = 'blog.delete_article'
     model = Article
     extra_context = {
         'title': 'Удаление статьи'
