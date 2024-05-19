@@ -37,6 +37,10 @@ EMAIL_HOST_USER='your_email@yandex.ru' - ваш email yandex
 EMAIL_HOST_PASSWORD='your_yandex_smtp_password' - ваш пароль smtp yandex
 ADMIN_EMAIL='admin@test.com' - email регистрации администратора сайта
 ADMIN_PASSWORD='secret' - пароль регистрации администратора сайта
+
+DEBUG=True - режим дебага
+REDIS_HOST=127.0.0.1:6379 - хост и порт редис
+CACHE_ENABLED=True - кэш
 ```
 ##### Настройка БД
 - примените миграции:

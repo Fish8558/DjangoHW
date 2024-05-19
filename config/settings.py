@@ -25,7 +25,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-3@sj5gb6lmip&(l$*uke%-8dvpj%jn#27u5!%9q-tf7drr2mz2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
 ALLOWED_HOSTS = []
 
@@ -155,3 +155,13 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/users/login/'
+
+CACHE_ENABLED = os.getenv('CACHE_ENABLED')
+
+if CACHE_ENABLED:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": os.getenv('REDIS_HOST'),
+        }
+    }
