@@ -5,7 +5,8 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from catalog.forms import ProductForm, VersionForm, FeedbackForm, ProductModeratorForm
-from catalog.models import Product, Contact, Feedback, Version
+from catalog.models import Product, Contact, Feedback, Version, Category
+from catalog.services import get_products_from_cache, get_categories_from_cache
 
 
 class ProductListView(ListView):
@@ -13,6 +14,9 @@ class ProductListView(ListView):
     extra_context = {
         "title": "Главная"
     }
+
+    def get_queryset(self):
+        return get_products_from_cache()
 
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
@@ -131,3 +135,23 @@ class FeedbackCreateView(CreateView):
         return context
 
     success_url = reverse_lazy("catalog:product_list")
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+    extra_context = {
+        "title": "Категории продуктов"
+    }
+
+    def get_queryset(self):
+        return get_categories_from_cache()
+
+
+class CategoryDetailView(LoginRequiredMixin, DetailView):
+    model = Category
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['title'] = f"Категория - {self.object}"
+        context_data['objects_list'] = Product.objects.filter(category=self.kwargs.get('pk'))
+        return context_data

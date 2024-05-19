@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% load my_tags %}
+    <div class="row justify-content-center text-center">
+        {% for object in objects_list %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal"> {{ object.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <img src="{{object.image | media_url}}" style="width:50%"><br>
+                    Цена: {{ object.price }} руб.<br>
+                    Категория: {{ object.category }}<br>
+                    Описание: {{ object.description | slice:100 }}
+                </div>
+                <a href="/product/{{object.pk}}" class="btn btn-success">Подробнее</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
