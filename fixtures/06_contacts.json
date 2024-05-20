@@ -1,0 +1,11 @@
+[
+{
+    "model": "catalog.contact",
+    "pk": 1,
+    "fields": {
+        "name": "OOO TechShop",
+        "address": "г. Москва, ул.Московская, стр.1",
+        "phone": "+7 (000) 123-45-67"
+    }
+}
+]
